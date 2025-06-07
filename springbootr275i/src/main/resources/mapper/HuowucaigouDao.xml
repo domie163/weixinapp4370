@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.HuowucaigouDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.HuowucaigouEntity" id="huowucaigouMap">
+        <result property="shangpinmingcheng" column="shangpinmingcheng"/>
+        <result property="shangpinfenlei" column="shangpinfenlei"/>
+        <result property="tupian" column="tupian"/>
+        <result property="guige" column="guige"/>
+        <result property="danjia" column="danjia"/>
+        <result property="caigoushuliang" column="caigoushuliang"/>
+        <result property="heji" column="heji"/>
+        <result property="gongyingzhanghao" column="gongyingzhanghao"/>
+        <result property="gongyingshang" column="gongyingshang"/>
+        <result property="gongyingshangshouji" column="gongyingshangshouji"/>
+        <result property="yuangonggonghao" column="yuangonggonghao"/>
+        <result property="yuangongxingming" column="yuangongxingming"/>
+        <result property="yuangongshouji" column="yuangongshouji"/>
+        <result property="caigoushijian" column="caigoushijian"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+        <result property="ispay" column="ispay"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.HuowucaigouVO" >
+		SELECT * FROM huowucaigou  huowucaigou         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.HuowucaigouVO" >
+		SELECT  huowucaigou.* FROM huowucaigou  huowucaigou 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.HuowucaigouView" >
+
+		SELECT  huowucaigou.* FROM huowucaigou  huowucaigou 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.HuowucaigouView" >
+		SELECT * FROM huowucaigou  huowucaigou <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ZaixiangoutongDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ZaixiangoutongEntity" id="zaixiangoutongMap">
+        <result property="shangpinmingcheng" column="shangpinmingcheng"/>
+        <result property="shangpinfenlei" column="shangpinfenlei"/>
+        <result property="tupian" column="tupian"/>
+        <result property="guige" column="guige"/>
+        <result property="gongyingzhanghao" column="gongyingzhanghao"/>
+        <result property="gongyingshang" column="gongyingshang"/>
+        <result property="gongyingshangshouji" column="gongyingshangshouji"/>
+        <result property="yuangonggonghao" column="yuangonggonghao"/>
+        <result property="yuangongxingming" column="yuangongxingming"/>
+        <result property="yuangongshouji" column="yuangongshouji"/>
+        <result property="zixunshijian" column="zixunshijian"/>
+        <result property="zixunbiaoti" column="zixunbiaoti"/>
+        <result property="zixunneirong" column="zixunneirong"/>
+        <result property="shhf" column="shhf"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ZaixiangoutongVO" >
+		SELECT * FROM zaixiangoutong  zaixiangoutong         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ZaixiangoutongVO" >
+		SELECT  zaixiangoutong.* FROM zaixiangoutong  zaixiangoutong 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ZaixiangoutongView" >
+
+		SELECT  zaixiangoutong.* FROM zaixiangoutong  zaixiangoutong 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ZaixiangoutongView" >
+		SELECT * FROM zaixiangoutong  zaixiangoutong <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
